@@ -55,7 +55,7 @@ export async function scrapeProperty(url: string): Promise<{ property: Property;
     throw new Error("RAPIDAPI_KEY environment variable is not set");
   }
 
-  const apiUrl = `https://${RAPIDAPI_HOST}/zillow/getPropertyDetails?zpid=${zpid}`;
+  const apiUrl = `https://${RAPIDAPI_HOST}/zillow/property/${zpid}`;
 
   console.log(`[Zillow] Fetching: ${apiUrl}`);
 
