@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Serif:ital@0;1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans antialiased;
+    background: #FAFAF8;
+    color: #0A2540;
+  }
+
+  ::selection {
+    background: #E8D5B5;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #E8E3DB;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #8B95A5;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white border border-brand-border rounded-card shadow-card;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+  .card-hover:hover {
+    @apply shadow-card-md;
+    transform: translateY(-2px);
+  }
+
+  .btn-primary {
+    @apply bg-brand-navy text-white border-none rounded-btn px-7 py-3 font-semibold text-sm cursor-pointer transition-all duration-200 tracking-wide;
+  }
+  .btn-primary:hover {
+    background: #0D2E4D;
+    box-shadow: 0 4px 12px rgba(10,37,64,0.2);
+    transform: translateY(-1px);
+  }
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+
+  .btn-secondary {
+    @apply bg-transparent text-brand-navy border border-brand-border rounded-btn px-5 py-2.5 font-medium text-[13px] cursor-pointer transition-all duration-200;
+  }
+  .btn-secondary:hover {
+    @apply border-brand-navy bg-brand-cream;
+  }
+
+  .btn-gold {
+    background: linear-gradient(135deg, #C4A265, #D4B373);
+    @apply text-white border-none rounded-btn px-8 py-3.5 font-semibold text-sm cursor-pointer transition-all duration-300 tracking-wider;
+  }
+  .btn-gold:hover {
+    box-shadow: 0 6px 20px rgba(196,162,101,0.35);
+    transform: translateY(-1px);
+  }
+
+  .input-field {
+    @apply w-full border border-brand-border rounded-btn px-4 py-3 text-sm text-brand-navy bg-white transition-all duration-200 outline-none;
+  }
+  .input-field:focus {
+    border-color: #C4A265;
+    box-shadow: 0 0 0 3px rgba(196,162,101,0.12);
+  }
+  .input-field::placeholder {
+    @apply text-brand-text-light;
+  }
+
+  .label {
+    @apply text-[11px] font-bold text-brand-text-light uppercase tracking-[0.08em] block mb-2;
+  }
+
+  .tag {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-semibold uppercase tracking-[0.04em];
+  }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+  animation: fadeUp 0.5s ease both;
+}
